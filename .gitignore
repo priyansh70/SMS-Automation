@@ -1,0 +1,14 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+/allure-report
+/allure-results
+TEST_STATUS_REPORT.md
+POM_STRUCTURE.md
+/.github
+/.vscode

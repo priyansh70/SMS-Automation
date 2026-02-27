@@ -1,0 +1,26 @@
+{
+  "name": "sms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:allure": "playwright test",
+    "allure:generate": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.2.3",
+    "allure-commandline": "^2.37.0",
+    "allure-playwright": "^3.5.0"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.3.0",
+    "google-libphonenumber": "^3.2.44"
+  }
+}
