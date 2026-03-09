@@ -5,11 +5,15 @@ import { PlansPage } from "../pages/Base Web App - Page/PlansPage.js";
 import { PaymentCardPage } from "../pages/Base Web App - Page/PaymentCardPage.js";
 import { PaymentPage } from "../pages/Base Web App - Page/PaymentPage.js";
 import { generateUSNumber, generateUserDetails, logPurchase } from "./utils.js";
+import { configDotenv } from "dotenv";
+configDotenv();
+
+const BASE_URL = process.env.BASE_URL || "https://smspluswebapp.evdpl.com/check";
 
 export async function completeRegistrationToPlans(page) {
   // Device check
   const devicePage = new DevicePage(page);
-  await devicePage.goto("https://smspluswebapp.evdpl.com/check");
+  await devicePage.goto(BASE_URL);
   await devicePage.completeDeviceCheck();
 
   // Phone verification

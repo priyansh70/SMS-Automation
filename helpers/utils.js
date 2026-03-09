@@ -3,7 +3,11 @@ import { PhoneNumberUtil } from "google-libphonenumber";
 import { faker } from "@faker-js/faker";
 import fs from "fs";
 import path from "path";
+import { configDotenv } from "dotenv";
+configDotenv();
 
+const BASE_URL =
+  process.env.BASE_URL || "https://smspluswebapp.evdpl.com/check";
 // ==================== HELPER FUNCTIONS ====================
 
 /**
@@ -18,7 +22,6 @@ export function logPurchase(customerName, planName, billingCycle) {
   fs.mkdirSync(path.dirname(logPath), { recursive: true });
   fs.appendFileSync(logPath, entry, "utf8");
 }
-
 
 export function generateUSNumber() {
   const phoneUtil = PhoneNumberUtil.getInstance();
@@ -93,7 +96,7 @@ export async function completePaymentCardDetails(page) {
 
 export async function completeRegistrationToPlans(page) {
   // Navigate through device verification
-  await page.goto("https://smspluswebapp.evdpl.com/check");
+  await page.goto(BASE_URL);
   await page.getByRole("button", { name: "Select Device" }).click();
   await page.getByText("Device").nth(2).click();
   await page.getByText("Yes").click();

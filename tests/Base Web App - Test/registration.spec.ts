@@ -7,13 +7,18 @@ import { DevicePage } from "../../pages/Base Web App - Page/DevicePage.js";
 import { RegistrationPage } from "../../pages/Base Web App - Page/RegistrationPage.js";
 import { ProfilePage } from "../../pages/Base Web App - Page/ProfilePage.js";
 import { PlansPage } from "../../pages/Base Web App - Page/PlansPage.js";
+import { configDotenv } from "dotenv";
+configDotenv();
+
+const BASE_URL =
+  process.env.BASE_URL || "https://smspluswebapp.evdpl.com/check";
 
 test.describe("Registration Suite", () => {
   test("2.1 Complete phone verification with valid US number", async ({
     page,
   }) => {
     const devicePage = new DevicePage(page);
-    await devicePage.goto("https://smspluswebapp.evdpl.com/check");
+    await devicePage.goto(BASE_URL);
     await devicePage.completeDeviceCheck();
 
     const registrationPage = new RegistrationPage(page);
@@ -24,7 +29,7 @@ test.describe("Registration Suite", () => {
     const centralOffice = generatedNumber.substring(3, 6);
     const lineNumber = generatedNumber.substring(6, 10);
     const numberPattern = new RegExp(
-      `${generatedNumber}|${areaCode}-${centralOffice}-${lineNumber}|\\+1 ${areaCode}`
+      `${generatedNumber}|${areaCode}-${centralOffice}-${lineNumber}|\\+1 ${areaCode}`,
     );
 
     await registrationPage.checkAgreement();
@@ -34,7 +39,7 @@ test.describe("Registration Suite", () => {
 
   test("2.2 Verify OTP with static code 1234", async ({ page }) => {
     const devicePage = new DevicePage(page);
-    await devicePage.goto("https://smspluswebapp.evdpl.com/check");
+    await devicePage.goto(BASE_URL);
     await devicePage.completeDeviceCheck();
 
     const registrationPage = new RegistrationPage(page);
@@ -48,7 +53,7 @@ test.describe("Registration Suite", () => {
 
   test("2.3 Create user profile with random data", async ({ page }) => {
     const devicePage = new DevicePage(page);
-    await devicePage.goto("https://smspluswebapp.evdpl.com/check");
+    await devicePage.goto(BASE_URL);
     await devicePage.completeDeviceCheck();
 
     const registrationPage = new RegistrationPage(page);
@@ -67,17 +72,17 @@ test.describe("Registration Suite", () => {
     page,
   }) => {
     const devicePage = new DevicePage(page);
-    await devicePage.goto("https://smspluswebapp.evdpl.com/check");
+    await devicePage.goto(BASE_URL);
     await devicePage.completeDeviceCheck();
 
     const registrationPage = new RegistrationPage(page);
     await registrationPage.getPhoneInput().click();
     await registrationPage.getPhoneInput().type("5551234567", { delay: 50 });
     await registrationPage.checkAgreement();
-    
+
     // Click button without expecting navigation (validation should fail)
     await registrationPage.getRequestOTPButton().click();
-    
+
     // Wait for error message instead of navigation
     await expect(registrationPage.getErrorMessage()).toBeVisible({
       timeout: 5000,
@@ -86,7 +91,7 @@ test.describe("Registration Suite", () => {
 
   test("2.5 Missing agreement checkbox validation", async ({ page }) => {
     const devicePage = new DevicePage(page);
-    await devicePage.goto("https://smspluswebapp.evdpl.com/check");
+    await devicePage.goto(BASE_URL);
     await devicePage.completeDeviceCheck();
 
     const registrationPage = new RegistrationPage(page);
@@ -101,13 +106,15 @@ test.describe("Registration Suite", () => {
     await registrationPage.getRequestOTPButton().click();
 
     // Wait for error message related to agreement checkbox
-    const errorMessage = page.locator("text=/must agree|accept|required|checkbox|terms/i");
+    const errorMessage = page.locator(
+      "text=/must agree|accept|required|checkbox|terms/i",
+    );
     await expect(errorMessage).toBeVisible({ timeout: 5000 });
   });
 
   test("2.6 Resend OTP functionality", async ({ page }) => {
     const devicePage = new DevicePage(page);
-    await devicePage.goto("https://smspluswebapp.evdpl.com/check");
+    await devicePage.goto(BASE_URL);
     await devicePage.completeDeviceCheck();
 
     const registrationPage = new RegistrationPage(page);
@@ -115,7 +122,7 @@ test.describe("Registration Suite", () => {
     await registrationPage.enterPhoneNumber(phoneNumber);
     await registrationPage.checkAgreement();
     await registrationPage.requestOTP();
-    
+
     // Wait a bit for OTP page to fully load
     await registrationPage.wait(2000);
 
@@ -123,9 +130,9 @@ test.describe("Registration Suite", () => {
     const resendLocators = [
       page.locator("text=/Didn't you receive any code/i"),
       page.locator("text=/Resend|resend/i"),
-      page.getByRole("button", { name: /resend/i })
+      page.getByRole("button", { name: /resend/i }),
     ];
-    
+
     let found = false;
     for (const locator of resendLocators) {
       if (await locator.isVisible({ timeout: 2000 }).catch(() => false)) {
@@ -133,7 +140,7 @@ test.describe("Registration Suite", () => {
         break;
       }
     }
-    
+
     expect(found).toBeTruthy();
   });
 });
