@@ -10,15 +10,14 @@ import { PlansPage } from "../../pages/Base Web App - Page/PlansPage.js";
 import { configDotenv } from "dotenv";
 configDotenv();
 
-const BASE_URL =
-  process.env.BASE_URL || "https://smspluswebapp.evdpl.com/check";
+const BASE_WEB_URL = process.env.BASE_WEB_URL;
 
 test.describe("Registration Suite", () => {
   test("2.1 Complete phone verification with valid US number", async ({
     page,
   }) => {
     const devicePage = new DevicePage(page);
-    await devicePage.goto(BASE_URL);
+    await devicePage.goto(BASE_WEB_URL);
     await devicePage.completeDeviceCheck();
 
     const registrationPage = new RegistrationPage(page);
@@ -39,7 +38,7 @@ test.describe("Registration Suite", () => {
 
   test("2.2 Verify OTP with static code 1234", async ({ page }) => {
     const devicePage = new DevicePage(page);
-    await devicePage.goto(BASE_URL);
+    await devicePage.goto(BASE_WEB_URL);
     await devicePage.completeDeviceCheck();
 
     const registrationPage = new RegistrationPage(page);
@@ -53,7 +52,7 @@ test.describe("Registration Suite", () => {
 
   test("2.3 Create user profile with random data", async ({ page }) => {
     const devicePage = new DevicePage(page);
-    await devicePage.goto(BASE_URL);
+    await devicePage.goto(BASE_WEB_URL);
     await devicePage.completeDeviceCheck();
 
     const registrationPage = new RegistrationPage(page);
@@ -72,7 +71,7 @@ test.describe("Registration Suite", () => {
     page,
   }) => {
     const devicePage = new DevicePage(page);
-    await devicePage.goto(BASE_URL);
+    await devicePage.goto(BASE_WEB_URL);
     await devicePage.completeDeviceCheck();
 
     const registrationPage = new RegistrationPage(page);
@@ -91,7 +90,7 @@ test.describe("Registration Suite", () => {
 
   test("2.5 Missing agreement checkbox validation", async ({ page }) => {
     const devicePage = new DevicePage(page);
-    await devicePage.goto(BASE_URL);
+    await devicePage.goto(BASE_WEB_URL);
     await devicePage.completeDeviceCheck();
 
     const registrationPage = new RegistrationPage(page);
@@ -114,7 +113,7 @@ test.describe("Registration Suite", () => {
 
   test("2.6 Resend OTP functionality", async ({ page }) => {
     const devicePage = new DevicePage(page);
-    await devicePage.goto(BASE_URL);
+    await devicePage.goto(BASE_WEB_URL);
     await devicePage.completeDeviceCheck();
 
     const registrationPage = new RegistrationPage(page);

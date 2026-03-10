@@ -8,7 +8,7 @@ import { generateUSNumber, generateUserDetails, logPurchase } from "./utils.js";
 import { configDotenv } from "dotenv";
 configDotenv();
 
-const BASE_URL = process.env.BASE_URL || "https://smspluswebapp.evdpl.com/check";
+const BASE_URL = process.env.BASE_URL;
 
 export async function completeRegistrationToPlans(page) {
   // Device check

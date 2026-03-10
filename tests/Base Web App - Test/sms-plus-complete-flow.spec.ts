@@ -12,8 +12,7 @@
 // import { configDotenv } from "dotenv";
 // configDotenv();
 
-// const BASE_URL =
-//   process.env.BASE_URL || "https://smspluswebapp.evdpl.com/check";
+// const BASE_WEB_URL = process.env.BASE_WEB_URL;
 
 // test.describe("SMS Plus Web App - Complete Registration and Payment Flow", () => {
 //   // ==================== DEVICE VERIFICATION SUITE ====================
@@ -21,7 +20,7 @@
 //   test.describe("Device Verification Suite", () => {
 //     test("1.1 Select device and confirm compatibility", async ({ page }) => {
 //       // Navigate to the device check page
-//       await page.goto(BASE_URL);
+//       await page.goto(BASE_WEB_URL);
 
 //       // Verify page displays 'Select your device' section
 //       await expect(page.getByText("Select your device")).toBeVisible();
@@ -58,7 +57,7 @@
 
 //     test("1.2 Confirm data plan availability", async ({ page }) => {
 //       // Navigate to device check and select device
-//       await page.goto(BASE_URL);
+//       await page.goto(BASE_WEB_URL);
 //       await page.getByRole("button", { name: "Select Device" }).click();
 //       await page.getByText("Device").nth(2).click();
 
@@ -78,7 +77,7 @@
 
 //     test("1.3 Select OS version - Android 7 or Higher", async ({ page }) => {
 //       // Complete device and data plan selection
-//       await page.goto(BASE_URL);
+//       await page.goto(BASE_WEB_URL);
 //       await page.getByRole("button", { name: "Select Device" }).click();
 //       await page.getByText("Device").nth(2).click();
 //       await page.getByText("Yes").click();
@@ -98,7 +97,7 @@
 //       page,
 //     }) => {
 //       // Navigate to device check and select device
-//       await page.goto(BASE_URL);
+//       await page.goto(BASE_WEB_URL);
 //       await page.getByRole("button", { name: "Select Device" }).click();
 //       await page.getByText("Device").nth(2).click();
 
@@ -113,7 +112,7 @@
 //       page,
 //     }) => {
 //       // Complete device and data plan selection
-//       await page.goto(BASE_URL);
+//       await page.goto(BASE_WEB_URL);
 //       await page.getByRole("button", { name: "Select Device" }).click();
 //       await page.getByText("Device").nth(2).click();
 //       await page.getByText("Yes").click();
@@ -133,7 +132,7 @@
 //       page,
 //     }) => {
 //       // Navigate to registration page
-//       await page.goto(BASE_URL);
+//       await page.goto(BASE_WEB_URL);
 //       await page.getByRole("button", { name: "Select Device" }).click();
 //       await page.getByText("Device").nth(2).click();
 //       await page.getByText("Yes").click();
@@ -168,7 +167,7 @@
 
 //     test("2.2 Verify OTP with static code 1234", async ({ page }) => {
 //       // Navigate through device check and phone verification
-//       await page.goto(BASE_URL);
+//       await page.goto(BASE_WEB_URL);
 //       await page.getByRole("button", { name: "Select Device" }).click();
 //       await page.getByText("Device").nth(2).click();
 //       await page.getByText("Yes").click();
@@ -217,7 +216,7 @@
 
 //     test("2.3 Create user profile with random data", async ({ page }) => {
 //       // Complete device check and phone verification
-//       await page.goto(BASE_URL);
+//       await page.goto(BASE_WEB_URL);
 //       await page.getByRole("button", { name: "Select Device" }).click();
 //       await page.getByText("Device").nth(2).click();
 //       await page.getByText("Yes").click();
@@ -275,7 +274,7 @@
 //       page,
 //     }) => {
 //       // Navigate to registration page
-//       await page.goto(BASE_URL);
+//       await page.goto(BASE_WEB_URL);
 //       await page.getByRole("button", { name: "Select Device" }).click();
 //       await page.getByText("Device").nth(2).click();
 //       await page.getByText("Yes").click();
@@ -300,7 +299,7 @@
 
 //     test("2.5 Missing agreement checkbox validation", async ({ page }) => {
 //       // Navigate to phone verification page
-//       await page.goto(BASE_URL);
+//       await page.goto(BASE_WEB_URL);
 //       await page.getByRole("button", { name: "Select Device" }).click();
 //       await page.getByText("Device").nth(2).click();
 //       await page.getByText("Yes").click();
@@ -331,7 +330,7 @@
 
 //     test("2.6 Resend OTP functionality", async ({ page }) => {
 //       // Navigate through device check and phone verification
-//       await page.goto(BASE_URL);
+//       await page.goto(BASE_WEB_URL);
 //       await page.getByRole("button", { name: "Select Device" }).click();
 //       await page.getByText("Device").nth(2).click();
 //       await page.getByText("Yes").click();
@@ -639,7 +638,7 @@
 //       page,
 //     }) => {
 //       // Step 1: Device Selection
-//       await page.goto(BASE_URL);
+//       await page.goto(BASE_WEB_URL);
 //       await page.getByRole("button", { name: "Select Device" }).click();
 //       await page.getByText("Device").nth(2).click();
 
@@ -714,7 +713,7 @@
 
 //     test("5.2 Complete flow with Premium yearly plan", async ({ page }) => {
 //       // Device verification
-//       await page.goto(BASE_URL);
+//       await page.goto(BASE_WEB_URL);
 //       await page.getByRole("button", { name: "Select Device" }).click();
 //       await page.getByText("Device").nth(2).click();
 //       await page.getByText("Yes").click();
@@ -788,7 +787,7 @@
 //       page,
 //     }) => {
 //       // Navigate to device check
-//       await page.goto(BASE_URL);
+//       await page.goto(BASE_WEB_URL);
 //       await page.getByRole("button", { name: "Select Device" }).click();
 //       await page.getByText("Device").nth(2).click();
 //       await page.getByText("Yes").click();
