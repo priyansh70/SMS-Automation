@@ -8,6 +8,7 @@ node_modules/
 /playwright/.auth/
 /allure-report
 /allure-results
+/.playwright-mcp
 TEST_STATUS_REPORT.md
 POM_STRUCTURE.md
 /.github
