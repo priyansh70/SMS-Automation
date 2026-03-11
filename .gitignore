@@ -9,7 +9,8 @@ node_modules/
 /allure-report
 /allure-results
 /.playwright-mcp
-TEST_STATUS_REPORT.md
-POM_STRUCTURE.md
 /.github
 /.vscode
+TEST_STATUS_REPORT.md
+POM_STRUCTURE.md
+chat_test_plan.md
