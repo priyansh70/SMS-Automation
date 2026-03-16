@@ -168,8 +168,8 @@ export function genereteAdminDetails() {
   const password = "Error@123"
 
   const adminDetails = {
-    firstName: faker.person.firstName(),
-    lastName: faker.person.lastName(),
+    firstName: faker.person.firstName().replace(/[^a-zA-Z]/g, " "),
+    lastName: faker.person.lastName().replace(/[^a-zA-Z]/g, " "),
     email: faker.internet.email(),
     password,
     confirmPassword: password,
