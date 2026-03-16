@@ -3,10 +3,10 @@
 
 import { test, expect } from "@playwright/test";
 import { generateUSNumber, generateUserDetails } from "../../helpers/utils.js";
-import { DevicePage } from "../../pages/Base Web App - Page/DevicePage.js";
-import { RegistrationPage } from "../../pages/Base Web App - Page/RegistrationPage.js";
-import { ProfilePage } from "../../pages/Base Web App - Page/ProfilePage.js";
-import { PlansPage } from "../../pages/Base Web App - Page/PlansPage.js";
+import { DevicePage } from "../../pages/BaseWebApp-Page/DevicePage.js";
+import { RegistrationPage } from "../../pages/BaseWebApp-Page/RegistrationPage.js";
+import { ProfilePage } from "../../pages/BaseWebApp-Page/ProfilePage.js";
+import { PlansPage } from "../../pages/BaseWebApp-Page/PlansPage.js";
 import { configDotenv } from "dotenv";
 configDotenv();
 
