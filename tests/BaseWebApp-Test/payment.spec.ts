@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
-import { PaymentCardPage } from "../../pages/Base Web App - Page/PaymentCardPage.js";
-import { PaymentPage } from "../../pages/Base Web App - Page/PaymentPage.js";
-import { PlansPage } from "../../pages/Base Web App - Page/PlansPage.js";
+import { PaymentCardPage } from "../../pages/BaseWebApp-Page/PaymentCardPage.js";
+import { PaymentPage } from "../../pages/BaseWebApp-Page/PaymentPage.js";
+import { PlansPage } from "../../pages/BaseWebApp-Page/PlansPage.js";
 import {
   completeRegistrationToPlans,
   completePaymentCardDetails,

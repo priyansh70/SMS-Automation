@@ -1,9 +1,9 @@
-import { DevicePage } from "../pages/Base Web App - Page/DevicePage.js";
-import { RegistrationPage } from "../pages/Base Web App - Page/RegistrationPage.js";
-import { ProfilePage } from "../pages/Base Web App - Page/ProfilePage.js";
-import { PlansPage } from "../pages/Base Web App - Page/PlansPage.js";
-import { PaymentCardPage } from "../pages/Base Web App - Page/PaymentCardPage.js";
-import { PaymentPage } from "../pages/Base Web App - Page/PaymentPage.js";
+import { DevicePage } from "../pages/BaseWebApp-Page/DevicePage.js";
+import { RegistrationPage } from "../pages/BaseWebApp-Page/RegistrationPage.js";
+import { ProfilePage } from "../pages/BaseWebApp-Page/ProfilePage.js";
+import { PlansPage } from "../pages/BaseWebApp-Page/PlansPage.js";
+import { PaymentCardPage } from "../pages/BaseWebApp-Page/PaymentCardPage.js";
+import { PaymentPage } from "../pages/BaseWebApp-Page/PaymentPage.js";
 import { generateUSNumber, generateUserDetails, logPurchase } from "./utils.js";
 import { configDotenv } from "dotenv";
 configDotenv();
