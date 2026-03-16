@@ -15,3 +15,5 @@ TEST_STATUS_REPORT.md
 POM_STRUCTURE.md
 chat_test_plan.md
 /.env
+playwright/.auth
+/data
