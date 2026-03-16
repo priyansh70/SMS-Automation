@@ -9,11 +9,6 @@ configDotenv();
 const BASE_WEB_URL = process.env.BASE_WEB_URL;
 // ==================== HELPER FUNCTIONS ====================
 
-/**
- * Append a record to the CSV log file recording which customer purchased which plan.
- * The file is created under `data/purchases.log` relative to workspace root.
- * Each line contains: timestamp,customerName,planName,billingCycle
- */
 export function logPurchase(customerName, planName, billingCycle) {
   const logPath = path.join(process.cwd(), "data", "purchases.log");
   const entry = `${new Date().toISOString()},${customerName},${planName},${billingCycle}\n`;
@@ -167,4 +162,18 @@ export async function generateUserDetails() {
     Math.floor(Math.random() * 10000) +
     "@yopmail.com";
   return { firstName, lastName, email };
+}
+
+export function genereteAdminDetails() {
+  const password = "Error@123"
+
+  const adminDetails = {
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
+    email: faker.internet.email(),
+    password,
+    confirmPassword: password,
+  };
+
+  return adminDetails;
 }
