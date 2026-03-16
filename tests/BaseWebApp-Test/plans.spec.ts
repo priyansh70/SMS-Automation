@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { PlansPage } from "../../pages/Base Web App - Page/PlansPage.js";
+import { PlansPage } from "../../pages/BaseWebApp-Page/PlansPage.js";
 import { completeRegistrationToPlans } from "../../helpers/appFlow.js";
 
 test.describe("Plan Selection Suite", () => {

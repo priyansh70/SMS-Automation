@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { DevicePage } from "../../pages/Base Web App - Page/DevicePage.js";
+import { DevicePage } from "../../pages/BaseWebApp-Page/DevicePage.js";
 import { configDotenv } from "dotenv";
 configDotenv();
 
