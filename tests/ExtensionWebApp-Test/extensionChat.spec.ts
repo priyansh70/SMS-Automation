@@ -1,7 +1,7 @@
 import { test, expect, Browser, BrowserContext, Page } from "@playwright/test";
-import LoginPage from "../../pages/Extension Web App - Page/LoginPage";
-import ChatsPage from "../../pages/Extension Web App - Page/ChatsPage";
-import ChatPage from "../../pages/Extension Web App - Page/ChatPage";
+import LoginPage from "../../pages/ExtensionWebApp-Page/LoginPage";
+import ChatsPage from "../../pages/ExtensionWebApp-Page/ChatsPage";
+import ChatPage from "../../pages/ExtensionWebApp-Page/ChatPage";
 import { configDotenv } from "dotenv";
 import { faker } from "@faker-js/faker";
 configDotenv();

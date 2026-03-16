@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { ExtensionRegistrationPage } from "../../pages/Extension Web App - Page/ExtensionRegistrationPage.js";
+import { ExtensionRegistrationPage } from "../../pages/ExtensionWebApp-Page/ExtensionRegistrationPage.js";
 import { configDotenv } from "dotenv";
 configDotenv();
 
