@@ -58,7 +58,7 @@ test.describe("Admin Panel - User Management Tests", () => {
   });
 
   // Delete first User of the table
-  test.only("should delete a user successfully", async () => {
+  test("should delete a user successfully", async () => {
     // Delete first User of the table
     await userPage.searchInTable();
     await userPage.deleteUser();
