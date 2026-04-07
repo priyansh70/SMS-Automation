@@ -8,12 +8,12 @@ import { generateUSNumber, generateUserDetails, logPurchase } from "./utils.js";
 import { configDotenv } from "dotenv";
 configDotenv();
 
-const BASE_URL = process.env.BASE_URL;
+const BASE_WEB_URL = process.env.BASE_WEB_URL;
 
 export async function completeRegistrationToPlans(page) {
   // Device check
   const devicePage = new DevicePage(page);
-  await devicePage.goto(BASE_URL);
+  await devicePage.goto(BASE_WEB_URL);
   await devicePage.completeDeviceCheck();
 
   // Phone verification
